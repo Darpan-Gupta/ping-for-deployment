@@ -15,6 +15,9 @@ const app = express();
 
 app.use(express.json()); // to accept json data
 
+app.get("/", (req, res) => {
+    res.send("app/server is running");
+});
 
 
 
@@ -41,9 +44,6 @@ app.use('/api/message', messageRoutes);
 // ---------------------------------- Deployment-----------------------------
 
 
-app.get("/", (req, res) => {
-    res.send("app/server is running");
-});
 
 app.use(notFound)
 app.use(errorHandler)
